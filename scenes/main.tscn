@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://clyh4g43jd6kn"]
+
+[ext_resource type="Texture2D" uid="uid://d4m77y2otaw" path="res://assets/backgrounds/background1.png" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://ba6u6ltxtqfwn" path="res://assets/sprites/observer1.png" id="2_sugp2"]
+
+[node name="Main" type="Node3D" unique_id=1324630702]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=434044926]
+
+[node name="Background" type="Sprite3D" parent="." unique_id=231178297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+texture = ExtResource("1_0wfyh")
+
+[node name="Observer" type="Sprite3D" parent="." unique_id=333465972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.5)
+texture = ExtResource("2_sugp2")
