@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhaqrc1xbtpc"
-path.s3tc="res://.godot/imported/forehead1.png-4f70cad58aca625345c2f30a673d69b6.s3tc.ctex"
+uid="uid://bjey3yp4eqs6h"
+path.s3tc="res://.godot/imported/beard1.png-dc7dcb4519210258ba2446093981a203.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/forehead1.png"
-dest_files=["res://.godot/imported/forehead1.png-4f70cad58aca625345c2f30a673d69b6.s3tc.ctex"]
+source_file="res://assets/sprites/beard1.png"
+dest_files=["res://.godot/imported/beard1.png-dc7dcb4519210258ba2446093981a203.s3tc.ctex"]
 
 [params]
 

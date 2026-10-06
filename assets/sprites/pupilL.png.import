@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhaqrc1xbtpc"
-path.s3tc="res://.godot/imported/forehead1.png-4f70cad58aca625345c2f30a673d69b6.s3tc.ctex"
+uid="uid://d2obc6xqij2cm"
+path.s3tc="res://.godot/imported/pupilL.png-eaa50e1ad21d5169cb13a5541973c77b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/forehead1.png"
-dest_files=["res://.godot/imported/forehead1.png-4f70cad58aca625345c2f30a673d69b6.s3tc.ctex"]
+source_file="res://assets/sprites/pupilL.png"
+dest_files=["res://.godot/imported/pupilL.png-eaa50e1ad21d5169cb13a5541973c77b.s3tc.ctex"]
 
 [params]
 
