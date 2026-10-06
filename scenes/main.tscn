@@ -1,14 +1,34 @@
 [gd_scene format=3 uid="uid://clyh4g43jd6kn"]
 
 [ext_resource type="Texture2D" uid="uid://d4m77y2otaw" path="res://assets/backgrounds/background1.png" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dkodaymru3m3p" path="res://scenes/camera_sway.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://ba6u6ltxtqfwn" path="res://assets/sprites/observer1.png" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://c7d8ke8nkkma" path="res://scenes/background_scroll.gd" id="3_sugp2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sp3l"]
+shading_mode = 0
+albedo_texture = ExtResource("1_0wfyh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_eg344"]
+size = Vector2(20.96, 15.8)
 
 [node name="Main" type="Node3D" unique_id=1324630702]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=434044926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
+script = ExtResource("1_jyhfs")
+move_amount = Vector2(0.15, 0.08)
+focus_distance = 8.0
+
+[node name="Background_scrolling" type="MeshInstance3D" parent="Camera3D" unique_id=255756601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -10)
+material_override = SubResource("StandardMaterial3D_2sp3l")
+mesh = SubResource("QuadMesh_eg344")
+script = ExtResource("3_sugp2")
 
 [node name="Background" type="Sprite3D" parent="." unique_id=231178297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+visible = false
 texture = ExtResource("1_0wfyh")
 
 [node name="Observer" type="Sprite3D" parent="." unique_id=333465972]
