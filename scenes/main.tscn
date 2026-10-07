@@ -11,9 +11,25 @@
 [ext_resource type="Texture2D" uid="uid://cnyckgx0ifvbn" path="res://assets/sprites/forehead2.png" id="6_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://d2obc6xqij2cm" path="res://assets/sprites/pupilL.png" id="7_85g3d"]
 [ext_resource type="Script" uid="uid://b5vhf6w8cddar" path="res://core/sprite_picker.gd" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://ce3gwx013q4e3" path="res://assets/sprites/forehead3.png" id="7_y6deb"]
 [ext_resource type="Texture2D" uid="uid://jqepmm6n2csw" path="res://assets/sprites/pupilR.png" id="8_choun"]
 [ext_resource type="Script" uid="uid://dk4qvtx261qei" path="res://scripts/beard.gd" id="8_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://cwbm6hlo828xn" path="res://assets/sprites/hat1.png" id="8_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://bf3omj288iq2r" path="res://assets/sprites/forehead4.png" id="8_og1vs"]
 [ext_resource type="Script" uid="uid://bqew0k5kiqnlx" path="res://scripts/pupil.gd" id="8_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://kr3k06nshcb7" path="res://assets/sprites/forehead5.png" id="9_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://bu80xvnntfu3q" path="res://assets/sprites/hat2.png" id="9_muem4"]
+[ext_resource type="Texture2D" uid="uid://d0fy4u4wufevn" path="res://assets/sprites/forehead6.png" id="10_vxglm"]
+[ext_resource type="Texture2D" uid="uid://ignoqiltlhyl" path="res://assets/sprites/forehead7.png" id="11_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://5j5vwvb6gbpt" path="res://assets/sprites/forehead8.png" id="12_yq6so"]
+[ext_resource type="Texture2D" uid="uid://b0ddkxogkg8sg" path="res://assets/sprites/forehead9.png" id="13_fv21b"]
+[ext_resource type="Texture2D" uid="uid://dhmla726yap3r" path="res://assets/sprites/forehead10.png" id="14_tel4y"]
+[ext_resource type="Texture2D" uid="uid://cey3rr1n6t3rs" path="res://assets/sprites/glasses.png" id="16_og1vs"]
+[ext_resource type="Script" uid="uid://btymm21wjrgom" path="res://core/saturation_control.gd" id="16_vxglm"]
+[ext_resource type="Script" uid="uid://1ipq4jt18l4s" path="res://scripts/glasses.gd" id="17_2wyq8"]
+[ext_resource type="Script" uid="uid://fse5gu24jmw8" path="res://scripts/hat.gd" id="21_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://bvhbfkdxn34ah" path="res://assets/sprites/observer2.png" id="28_fv21b"]
+[ext_resource type="Script" uid="uid://c8njmxwlmwctn" path="res://scripts/overlay.gd" id="29_tel4y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sp3l"]
 shading_mode = 0
@@ -30,6 +46,44 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_ya4ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y6deb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_og1vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2wyq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vxglm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2f3dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yq6so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fv21b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tel4y")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkv2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jbj1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_muem4")
 }],
 "loop": 0,
 "name": &"default",
@@ -55,12 +109,13 @@ animations = [{
 [node name="Camera3D" type="Camera3D" parent="." unique_id=434044926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
 script = ExtResource("1_jyhfs")
-move_amount = Vector2(0.15, 0.08)
-focus_distance = 16.0
-smoothing = 3.0
+move_amount = Vector2(0.2, 0.3)
+focus_distance = 15.0
+smoothing = 1.0
 
 [node name="Background_scrolling" type="MeshInstance3D" parent="Camera3D" unique_id=255756601]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -10)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
 material_override = SubResource("StandardMaterial3D_2sp3l")
 mesh = SubResource("QuadMesh_eg344")
 script = ExtResource("3_sugp2")
@@ -75,26 +130,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.5)
 texture = ExtResource("2_sugp2")
 
 [node name="Forehead" type="AnimatedSprite3D" parent="Observer" unique_id=1054514901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
 sprite_frames = SubResource("SpriteFrames_trceg")
 script = ExtResource("6_tefeu")
 metadata/_custom_type_script = "uid://c67l7rfa0i8wk"
 
-[node name="Beard" type="AnimatedSprite3D" parent="Observer" unique_id=1872454297]
+[node name="SaturationControl" type="Node" parent="Observer/Forehead" unique_id=878299037]
+script = ExtResource("16_vxglm")
+
+[node name="Glasses" type="Sprite3D" parent="Observer" unique_id=441408967 node_paths=PackedStringArray("camera", "background", "hat", "beard", "forehead")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+texture = ExtResource("16_og1vs")
+script = ExtResource("17_2wyq8")
+camera = NodePath("../../Camera3D")
+background = NodePath("../../Camera3D/Background_scrolling")
+hat = NodePath("../Hat")
+beard = NodePath("../Beard")
+forehead = NodePath("../Forehead")
+color_fade_duration = 2.0
+
+[node name="SaturationControl" type="Node" parent="Observer/Glasses" unique_id=2017726620]
+script = ExtResource("16_vxglm")
+
+[node name="Hat" type="AnimatedSprite3D" parent="Observer" unique_id=1337714920]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
+sprite_frames = SubResource("SpriteFrames_jkv2x")
+script = ExtResource("21_2f3dj")
+metadata/_custom_type_script = "uid://c67l7rfa0i8wk"
+
+[node name="SaturationControl" type="Node" parent="Observer/Hat" unique_id=160110789]
+script = ExtResource("16_vxglm")
+
+[node name="Beard" type="AnimatedSprite3D" parent="Observer" unique_id=1872454297]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
 sprite_frames = SubResource("SpriteFrames_a8y0u")
 script = ExtResource("8_eb6dy")
 metadata/_custom_type_script = "uid://c67l7rfa0i8wk"
+
+[node name="SaturationControl" type="Node" parent="Observer/Beard" unique_id=51260037]
+script = ExtResource("16_vxglm")
 
 [node name="pupilL" type="Sprite3D" parent="Observer" unique_id=913416864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02, 1.24, 0.1)
 texture = ExtResource("7_85g3d")
 script = ExtResource("8_ya4ey")
+max_offset_pixels = 9.0
+follow_speed = 1.5
 
 [node name="pupilR" type="Sprite3D" parent="Observer" unique_id=215500706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.704, 1.22, 0.1)
 texture = ExtResource("8_choun")
 script = ExtResource("8_ya4ey")
+max_offset_pixels = 9.0
+follow_speed = 1.5
+
+[node name="Overlay" type="Sprite3D" parent="Observer" unique_id=980522791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+texture = ExtResource("28_fv21b")
+script = ExtResource("29_tel4y")
 
 [node name="PickerHelper" type="Node" parent="." unique_id=1059695823]
 script = ExtResource("7_o6xl0")

@@ -12,10 +12,9 @@ func accepts_click() -> bool:
 	return not has_been_clicked
 
 func on_click() -> void:
-	
 	has_been_clicked = true
 	play(&"default")
-	GameState.beard_clicked = true
+	GameState.hat_clicked = true
 	GameState.progress_changed.emit()
 
 ## Can be clicked again, as before the game.
