@@ -30,6 +30,8 @@
 [ext_resource type="Script" uid="uid://fse5gu24jmw8" path="res://scripts/hat.gd" id="21_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://bvhbfkdxn34ah" path="res://assets/sprites/observer2.png" id="28_fv21b"]
 [ext_resource type="Script" uid="uid://c8njmxwlmwctn" path="res://scripts/overlay.gd" id="29_tel4y"]
+[ext_resource type="Texture2D" uid="uid://cl62th35fvdll" path="res://assets/sprites/BAST.png" id="31_tel4y"]
+[ext_resource type="Texture2D" uid="uid://dpcjestobfx5n" path="res://assets/sprites/TREES.png" id="32_qkpxi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sp3l"]
 shading_mode = 0
@@ -138,10 +140,11 @@ metadata/_custom_type_script = "uid://c67l7rfa0i8wk"
 
 [node name="SaturationControl" type="Node" parent="Observer/Forehead" unique_id=878299037]
 script = ExtResource("16_vxglm")
+react_to_unlock = true
 
 [node name="Glasses" type="Sprite3D" parent="Observer" unique_id=441408967 node_paths=PackedStringArray("camera", "background", "hat", "beard", "forehead")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
 texture = ExtResource("16_og1vs")
 script = ExtResource("17_2wyq8")
 camera = NodePath("../../Camera3D")
@@ -163,6 +166,7 @@ metadata/_custom_type_script = "uid://c67l7rfa0i8wk"
 
 [node name="SaturationControl" type="Node" parent="Observer/Hat" unique_id=160110789]
 script = ExtResource("16_vxglm")
+react_to_unlock = true
 
 [node name="Beard" type="AnimatedSprite3D" parent="Observer" unique_id=1872454297]
 unique_name_in_owner = true
@@ -173,20 +177,27 @@ metadata/_custom_type_script = "uid://c67l7rfa0i8wk"
 
 [node name="SaturationControl" type="Node" parent="Observer/Beard" unique_id=51260037]
 script = ExtResource("16_vxglm")
+react_to_unlock = true
 
 [node name="pupilL" type="Sprite3D" parent="Observer" unique_id=913416864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02, 1.24, 0.1)
 texture = ExtResource("7_85g3d")
 script = ExtResource("8_ya4ey")
 max_offset_pixels = 9.0
-follow_speed = 1.5
+follow_speed = 2.0
+
+[node name="SaturationControl" type="Node" parent="Observer/pupilL" unique_id=606995690]
+script = ExtResource("16_vxglm")
 
 [node name="pupilR" type="Sprite3D" parent="Observer" unique_id=215500706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.704, 1.22, 0.1)
 texture = ExtResource("8_choun")
 script = ExtResource("8_ya4ey")
 max_offset_pixels = 9.0
-follow_speed = 1.5
+follow_speed = 2.0
+
+[node name="SaturationControl" type="Node" parent="Observer/pupilR" unique_id=1493988560]
+script = ExtResource("16_vxglm")
 
 [node name="Overlay" type="Sprite3D" parent="Observer" unique_id=980522791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
@@ -195,3 +206,11 @@ script = ExtResource("29_tel4y")
 
 [node name="PickerHelper" type="Node" parent="." unique_id=1059695823]
 script = ExtResource("7_o6xl0")
+
+[node name="BAST" type="Sprite3D" parent="." unique_id=427724237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8)
+texture = ExtResource("31_tel4y")
+
+[node name="TREES" type="Sprite3D" parent="." unique_id=1758372777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, -26)
+texture = ExtResource("32_qkpxi")

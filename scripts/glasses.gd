@@ -76,8 +76,9 @@ func _on_progress_changed() -> void:
 		return
 	_colored = true
 	_fade(self, 1.0)
-	for item in [hat, beard, forehead]:
-		_fade(item, 0.0)
+	var control = _saturation_of(self)
+	if control != null:
+		control.glow_to(1.0, color_fade_duration)
 
 
 func _fade(node: Node3D, target: float) -> void:

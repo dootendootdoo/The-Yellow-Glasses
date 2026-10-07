@@ -4,9 +4,9 @@ extends MeshInstance3D
 
 ## How fast the image moves, in "image widths per second".
 ## 0.02 = one full loop every 50 seconds.
-@export var scroll_speed: float = 0.005
+@export var scroll_speed: float = -.02
 ## Speed after the puzzle is solved. Negative reverses the direction.
-@export var solved_scroll_speed: float = -0.02
+@export var solved_scroll_speed: float = 0.1
 ## Seconds to blend to the new speed. 0 switches instantly.
 @export var speed_change_duration: float = 2.0
 
